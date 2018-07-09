@@ -1,0 +1,19 @@
+<?php
+
+return PhpCsFixer\Config::create()
+    ->setRiskyAllowed(true)
+    ->setRules([
+        '@PSR2' => true,
+        '@Symfony' => true,
+        'array_syntax' => ['syntax' => 'short'],
+        'blank_line_after_opening_tag' => false,
+        'blank_line_before_statement' => ['statements' => ['declare']],
+        'concat_space' => ['spacing' => 'one'],
+        'increment_style' => ['style' => 'post'],
+        'phpdoc_align' => [],
+        'phpdoc_separation' => false,
+        'visibility_required' => ['property', 'method', 'const'],
+        'yoda_style' => true,
+        'cast_spaces' => ['space' => 'none'],
+    ])
+;

@@ -1,0 +1,43 @@
+{
+    "name": "wernerdweight/cs",
+    "description": "Coding Standards",
+    "keywords": [
+        "cs",
+        "coding",
+        "standards"
+    ],
+    "homepage": "https://github.com/wernerdweight/CS",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Werner Dweight Solutions",
+            "email": "info@wds.blue"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "slevomat/coding-standard": "^4.6",
+        "friendsofphp/php-cs-fixer": "^2.12",
+        "squizlabs/php_codesniffer": "^3.3",
+        "phpmd/phpmd": "^2.6",
+        "phpstan/phpstan": "^0.10.1",
+        "phpunit/phpunit": "^7.2"
+    },
+    "require-dev": {},
+    "suggest": {},
+    "autoload": {
+        "psr-0": {
+            "WernerDweight\\CS\\": ""
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        },
+        "files": [
+            "./vendor/squizlabs/php_codesniffer/autoload.php",
+            "./vendor/squizlabs/php_codesniffer/src/Util/Tokens.php"
+        ]
+    },
+    "target-dir": "WernerDweight/CS"
+}
