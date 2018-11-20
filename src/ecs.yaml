@@ -2,49 +2,52 @@ imports:
     - { resource: '%vendor_dir%/symplify/easy-coding-standard/config/psr12.yml' }
     - { resource: '%vendor_dir%/symplify/easy-coding-standard/config/symfony.yml' }
 
+parameters:
+    exclude_checkers:
+        - 'PhpCsFixer\Fixer\PhpTag\BlankLineAfterOpeningTagFixer'
+        - 'PhpCsFixer\Fixer\LanguageConstruct\DeclareEqualNormalizeFixer'
+
 services:
     PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer:
         syntax: short
-    PhpCsFixer\Fixer\PhpTag\BlankLineAfterOpeningTagFixer: false
     PhpCsFixer\Fixer\Whitespace\BlankLineBeforeStatementFixer:
-        statements: declare
+        statements: ['declare']
     PhpCsFixer\Fixer\Operator\ConcatSpaceFixer:
         spacing: one
     PhpCsFixer\Fixer\Operator\IncrementStyleFixer:
         style: post
     PhpCsFixer\Fixer\Phpdoc\PhpdocAlignFixer: ~
-    PhpCsFixer\Fixer\Phpdoc\PhpdocSeparationFixer: false
     PhpCsFixer\Fixer\ClassNotation\VisibilityRequiredFixer: ['property', 'method', 'const']
-    PhpCsFixer\Fixer\ControlStructure\YodaStyleFixer: true
+    PhpCsFixer\Fixer\ControlStructure\YodaStyleFixer: ~
     PhpCsFixer\Fixer\CastNotation\CastSpacesFixer:
         space: none
 
     SlevomatCodingStandard\Sniffs\Arrays\TrailingArrayCommaSniff: ~
-    SlevomatCodingStandard\Sniffs\Classes\ClassConstantVisibility: ~
-    SlevomatCodingStandard\Sniffs\Classes\UnusedPrivateElements: ~
-    SlevomatCodingStandard\Sniffs\Commenting\InlineDocCommentDeclaration: ~
-    SlevomatCodingStandard\Sniffs\Commenting\ForbiddenAnnotations:
-        forbiddenAnnotations: '@author,@created,@version,@package,@copyright,@license'
-    SlevomatCodingStandard\Sniffs\ControlStructures\AssignmentInCondition: ~
-    SlevomatCodingStandard\Sniffs\ControlStructures\DisallowEqualOperators: ~
-    SlevomatCodingStandard\Sniffs\ControlStructures\LanguageConstructWithParentheses: ~
-    SlevomatCodingStandard\Sniffs\Exceptions\DeadCatch: ~
-    SlevomatCodingStandard\Sniffs\Exceptions\ReferenceThrowableOnly: ~
-    SlevomatCodingStandard\Sniffs\Namespaces\AlphabeticallySortedUses: ~
-    SlevomatCodingStandard\Sniffs\Namespaces\DisallowGroupUse: ~
-    SlevomatCodingStandard\Sniffs\Namespaces\MultipleUsesPerLine: ~
-    SlevomatCodingStandard\Sniffs\Namespaces\UseDoesNotStartWithBackslash: ~
-    SlevomatCodingStandard\Sniffs\Namespaces\UnusedUses:
+    SlevomatCodingStandard\Sniffs\Classes\ClassConstantVisibilitySniff: ~
+    SlevomatCodingStandard\Sniffs\Classes\UnusedPrivateElementsSniff: ~
+    SlevomatCodingStandard\Sniffs\Commenting\InlineDocCommentDeclarationSniff: ~
+    SlevomatCodingStandard\Sniffs\Commenting\ForbiddenAnnotationsSniff:
+        forbiddenAnnotations: ['@author', '@created', '@version', '@package', '@copyright', '@license']
+    SlevomatCodingStandard\Sniffs\ControlStructures\AssignmentInConditionSniff: ~
+    SlevomatCodingStandard\Sniffs\ControlStructures\DisallowEqualOperatorsSniff: ~
+    SlevomatCodingStandard\Sniffs\ControlStructures\LanguageConstructWithParenthesesSniff: ~
+    SlevomatCodingStandard\Sniffs\Exceptions\DeadCatchSniff: ~
+    SlevomatCodingStandard\Sniffs\Exceptions\ReferenceThrowableOnlySniff: ~
+    SlevomatCodingStandard\Sniffs\Namespaces\AlphabeticallySortedUsesSniff: ~
+    SlevomatCodingStandard\Sniffs\Namespaces\DisallowGroupUseSniff: ~
+    SlevomatCodingStandard\Sniffs\Namespaces\MultipleUsesPerLineSniff: ~
+    SlevomatCodingStandard\Sniffs\Namespaces\UseDoesNotStartWithBackslashSniff: ~
+    SlevomatCodingStandard\Sniffs\Namespaces\UnusedUsesSniff:
         searchAnnotations: true
-    SlevomatCodingStandard\Sniffs\Namespaces\UseFromSameNamespace: ~
-    SlevomatCodingStandard\Sniffs\TypeHints\DeclareStrictTypes:
+    SlevomatCodingStandard\Sniffs\Namespaces\UseFromSameNamespaceSniff: ~
+    SlevomatCodingStandard\Sniffs\TypeHints\DeclareStrictTypesSniff:
         newlinesCountBetweenOpenTagAndDeclare: 1
         spacesCountAroundEqualsSign: 0
-    SlevomatCodingStandard\Sniffs\TypeHints\LongTypeHints: ~
-    SlevomatCodingStandard\Sniffs\TypeHints\NullableTypeForNullDefaultValue: ~
-    SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSpacing: ~
-    SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSpacing: ~
-    SlevomatCodingStandard\Sniffs\Types\EmptyLinesAroundTypeBraces: ~
+    SlevomatCodingStandard\Sniffs\TypeHints\LongTypeHintsSniff: ~
+    SlevomatCodingStandard\Sniffs\TypeHints\NullableTypeForNullDefaultValueSniff: ~
+    SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSpacingSniff: ~
+    SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSpacingSniff: ~
+    SlevomatCodingStandard\Sniffs\Types\EmptyLinesAroundTypeBracesSniff:
         linesCountAfterOpeningBrace: 0
         linesCountBeforeClosingBrace: 0
 
