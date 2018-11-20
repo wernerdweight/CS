@@ -1,0 +1,79 @@
+imports:
+    - { resource: '%vendor_dir%/symplify/easy-coding-standard/config/psr12.yml' }
+    - { resource: '%vendor_dir%/symplify/easy-coding-standard/config/symfony.yml' }
+
+services:
+    PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer:
+        syntax: short
+    PhpCsFixer\Fixer\PhpTag\BlankLineAfterOpeningTagFixer: false
+    PhpCsFixer\Fixer\Whitespace\BlankLineBeforeStatementFixer:
+        statements: declare
+    PhpCsFixer\Fixer\Operator\ConcatSpaceFixer:
+        spacing: one
+    PhpCsFixer\Fixer\Operator\IncrementStyleFixer:
+        style: post
+    PhpCsFixer\Fixer\Phpdoc\PhpdocAlignFixer: ~
+    PhpCsFixer\Fixer\Phpdoc\PhpdocSeparationFixer: false
+    PhpCsFixer\Fixer\ClassNotation\VisibilityRequiredFixer: ['property', 'method', 'const']
+    PhpCsFixer\Fixer\ControlStructure\YodaStyleFixer: true
+    PhpCsFixer\Fixer\CastNotation\CastSpacesFixer:
+        space: none
+
+    SlevomatCodingStandard\Sniffs\Arrays\TrailingArrayCommaSniff: ~
+    SlevomatCodingStandard\Sniffs\Classes\ClassConstantVisibility: ~
+    SlevomatCodingStandard\Sniffs\Classes\UnusedPrivateElements: ~
+    SlevomatCodingStandard\Sniffs\Commenting\InlineDocCommentDeclaration: ~
+    SlevomatCodingStandard\Sniffs\Commenting\ForbiddenAnnotations:
+        forbiddenAnnotations: '@author,@created,@version,@package,@copyright,@license'
+    SlevomatCodingStandard\Sniffs\ControlStructures\AssignmentInCondition: ~
+    SlevomatCodingStandard\Sniffs\ControlStructures\DisallowEqualOperators: ~
+    SlevomatCodingStandard\Sniffs\ControlStructures\LanguageConstructWithParentheses: ~
+    SlevomatCodingStandard\Sniffs\Exceptions\DeadCatch: ~
+    SlevomatCodingStandard\Sniffs\Exceptions\ReferenceThrowableOnly: ~
+    SlevomatCodingStandard\Sniffs\Namespaces\AlphabeticallySortedUses: ~
+    SlevomatCodingStandard\Sniffs\Namespaces\DisallowGroupUse: ~
+    SlevomatCodingStandard\Sniffs\Namespaces\MultipleUsesPerLine: ~
+    SlevomatCodingStandard\Sniffs\Namespaces\UseDoesNotStartWithBackslash: ~
+    SlevomatCodingStandard\Sniffs\Namespaces\UnusedUses:
+        searchAnnotations: true
+    SlevomatCodingStandard\Sniffs\Namespaces\UseFromSameNamespace: ~
+    SlevomatCodingStandard\Sniffs\TypeHints\DeclareStrictTypes:
+        newlinesCountBetweenOpenTagAndDeclare: 1
+        spacesCountAroundEqualsSign: 0
+    SlevomatCodingStandard\Sniffs\TypeHints\LongTypeHints: ~
+    SlevomatCodingStandard\Sniffs\TypeHints\NullableTypeForNullDefaultValue: ~
+    SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSpacing: ~
+    SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSpacing: ~
+    SlevomatCodingStandard\Sniffs\Types\EmptyLinesAroundTypeBraces: ~
+        linesCountAfterOpeningBrace: 0
+        linesCountBeforeClosingBrace: 0
+
+    Symplify\CodingStandard\Sniffs\Commenting\AnnotationTypeExistsSniff: ~
+    Symplify\CodingStandard\Fixer\Commenting\ParamReturnAndVarTagMalformsFixer: ~
+    Symplify\CodingStandard\Fixer\Order\PrivateMethodOrderByUseFixer: ~
+    Symplify\CodingStandard\Fixer\Order\PropertyOrderByComplexityFixer: ~
+    Symplify\CodingStandard\Fixer\ArrayNotation\StandaloneLineInMultilineArrayFixer: ~
+    Symplify\CodingStandard\Fixer\Commenting\RemoveEmptyDocBlockFixer: ~
+    Symplify\CodingStandard\Fixer\Commenting\RemoveSuperfluousDocBlockWhitespaceFixer: ~
+    Symplify\CodingStandard\Fixer\LineLength\LineLengthFixer: ~
+    Symplify\CodingStandard\Fixer\Naming\PropertyNameMatchingTypeFixer: ~
+    Symplify\CodingStandard\Fixer\Php\ClassStringToClassConstantFixer: ~
+    Symplify\CodingStandard\Fixer\Property\ArrayPropertyDefaultValueFixer: ~
+    Symplify\CodingStandard\Fixer\Strict\BlankLineAfterStrictTypesFixer: ~
+    Symplify\CodingStandard\Fixer\Solid\FinalInterfaceFixer: ~
+    Symplify\CodingStandard\Sniffs\Architecture\ExplicitExceptionSniff: ~
+    Symplify\CodingStandard\Sniffs\CleanCode\ForbiddenParentClassSniff:
+        forbiddenParentClasses:
+            - 'Doctrine\ORM\EntityRepository'
+    Symplify\CodingStandard\Sniffs\CleanCode\ForbiddenReferenceSniff: ~
+    Symplify\CodingStandard\Sniffs\CleanCode\ForbiddenStaticFunctionSniff: ~
+    Symplify\CodingStandard\Sniffs\Commenting\VarConstantCommentSniff: ~
+    Symplify\CodingStandard\Sniffs\ControlStructure\ForbiddenDoubleAssignSniff: ~
+    Symplify\CodingStandard\Sniffs\ControlStructure\SprintfOverContactSniff: ~
+    Symplify\CodingStandard\Sniffs\Debug\CommentedOutCodeSniff: ~
+    Symplify\CodingStandard\Sniffs\Debug\DebugFunctionCallSniff: ~
+    Symplify\CodingStandard\Sniffs\DependencyInjection\NoClassInstantiationSniff: ~
+    Symplify\CodingStandard\Sniffs\Naming\AbstractClassNameSniff: ~
+    Symplify\CodingStandard\Sniffs\Naming\ClassNameSuffixByParentSniff: ~
+    Symplify\CodingStandard\Sniffs\Naming\InterfaceNameSniff: ~
+    Symplify\CodingStandard\Sniffs\Naming\TraitNameSniff: ~
