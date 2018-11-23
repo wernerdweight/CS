@@ -1,0 +1,82 @@
+imports:
+    - { resource: '%vendor_dir%/symplify/easy-coding-standard/config/psr12.yml' }
+    - { resource: '%vendor_dir%/symplify/easy-coding-standard/config/symfony.yml' }
+
+parameters:
+    exclude_checkers:
+        - 'PhpCsFixer\Fixer\PhpTag\BlankLineAfterOpeningTagFixer'
+        - 'PhpCsFixer\Fixer\LanguageConstruct\DeclareEqualNormalizeFixer'
+
+services:
+    PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer:
+        syntax: short
+    PhpCsFixer\Fixer\Whitespace\BlankLineBeforeStatementFixer:
+        statements: ['declare']
+    PhpCsFixer\Fixer\Operator\ConcatSpaceFixer:
+        spacing: one
+    PhpCsFixer\Fixer\Operator\IncrementStyleFixer:
+        style: post
+    PhpCsFixer\Fixer\Phpdoc\PhpdocAlignFixer: ~
+    PhpCsFixer\Fixer\ClassNotation\VisibilityRequiredFixer: ['property', 'method', 'const']
+    PhpCsFixer\Fixer\ControlStructure\YodaStyleFixer: ~
+    PhpCsFixer\Fixer\CastNotation\CastSpacesFixer:
+        space: none
+
+    SlevomatCodingStandard\Sniffs\Arrays\TrailingArrayCommaSniff: ~
+    SlevomatCodingStandard\Sniffs\Classes\ClassConstantVisibilitySniff: ~
+    SlevomatCodingStandard\Sniffs\Classes\UnusedPrivateElementsSniff: ~
+    SlevomatCodingStandard\Sniffs\Commenting\InlineDocCommentDeclarationSniff: ~
+    SlevomatCodingStandard\Sniffs\Commenting\ForbiddenAnnotationsSniff:
+        forbiddenAnnotations: ['@author', '@created', '@version', '@package', '@copyright', '@license']
+    SlevomatCodingStandard\Sniffs\ControlStructures\AssignmentInConditionSniff: ~
+    SlevomatCodingStandard\Sniffs\ControlStructures\DisallowEqualOperatorsSniff: ~
+    SlevomatCodingStandard\Sniffs\ControlStructures\LanguageConstructWithParenthesesSniff: ~
+    SlevomatCodingStandard\Sniffs\Exceptions\DeadCatchSniff: ~
+    SlevomatCodingStandard\Sniffs\Exceptions\ReferenceThrowableOnlySniff: ~
+    SlevomatCodingStandard\Sniffs\Namespaces\AlphabeticallySortedUsesSniff: ~
+    SlevomatCodingStandard\Sniffs\Namespaces\DisallowGroupUseSniff: ~
+    SlevomatCodingStandard\Sniffs\Namespaces\MultipleUsesPerLineSniff: ~
+    SlevomatCodingStandard\Sniffs\Namespaces\UseDoesNotStartWithBackslashSniff: ~
+    SlevomatCodingStandard\Sniffs\Namespaces\UnusedUsesSniff:
+        searchAnnotations: true
+    SlevomatCodingStandard\Sniffs\Namespaces\UseFromSameNamespaceSniff: ~
+    SlevomatCodingStandard\Sniffs\TypeHints\DeclareStrictTypesSniff:
+        newlinesCountBetweenOpenTagAndDeclare: 1
+        spacesCountAroundEqualsSign: 0
+    SlevomatCodingStandard\Sniffs\TypeHints\LongTypeHintsSniff: ~
+    SlevomatCodingStandard\Sniffs\TypeHints\NullableTypeForNullDefaultValueSniff: ~
+    SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSpacingSniff: ~
+    SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSpacingSniff: ~
+    SlevomatCodingStandard\Sniffs\Types\EmptyLinesAroundTypeBracesSniff:
+        linesCountAfterOpeningBrace: 0
+        linesCountBeforeClosingBrace: 0
+
+    Symplify\CodingStandard\Sniffs\Commenting\AnnotationTypeExistsSniff: ~
+    Symplify\CodingStandard\Fixer\Commenting\ParamReturnAndVarTagMalformsFixer: ~
+    Symplify\CodingStandard\Fixer\Order\PrivateMethodOrderByUseFixer: ~
+    Symplify\CodingStandard\Fixer\Order\PropertyOrderByComplexityFixer: ~
+    Symplify\CodingStandard\Fixer\ArrayNotation\StandaloneLineInMultilineArrayFixer: ~
+    Symplify\CodingStandard\Fixer\Commenting\RemoveEmptyDocBlockFixer: ~
+    Symplify\CodingStandard\Fixer\Commenting\RemoveSuperfluousDocBlockWhitespaceFixer: ~
+    Symplify\CodingStandard\Fixer\LineLength\LineLengthFixer: ~
+    Symplify\CodingStandard\Fixer\Naming\PropertyNameMatchingTypeFixer: ~
+    Symplify\CodingStandard\Fixer\Php\ClassStringToClassConstantFixer: ~
+    Symplify\CodingStandard\Fixer\Property\ArrayPropertyDefaultValueFixer: ~
+    Symplify\CodingStandard\Fixer\Strict\BlankLineAfterStrictTypesFixer: ~
+    Symplify\CodingStandard\Fixer\Solid\FinalInterfaceFixer: ~
+    Symplify\CodingStandard\Sniffs\Architecture\ExplicitExceptionSniff: ~
+    Symplify\CodingStandard\Sniffs\CleanCode\ForbiddenParentClassSniff:
+        forbiddenParentClasses:
+            - 'Doctrine\ORM\EntityRepository'
+    Symplify\CodingStandard\Sniffs\CleanCode\ForbiddenReferenceSniff: ~
+    Symplify\CodingStandard\Sniffs\CleanCode\ForbiddenStaticFunctionSniff: ~
+    Symplify\CodingStandard\Sniffs\Commenting\VarConstantCommentSniff: ~
+    Symplify\CodingStandard\Sniffs\ControlStructure\ForbiddenDoubleAssignSniff: ~
+    Symplify\CodingStandard\Sniffs\ControlStructure\SprintfOverContactSniff: ~
+    Symplify\CodingStandard\Sniffs\Debug\CommentedOutCodeSniff: ~
+    Symplify\CodingStandard\Sniffs\Debug\DebugFunctionCallSniff: ~
+    Symplify\CodingStandard\Sniffs\DependencyInjection\NoClassInstantiationSniff: ~
+    Symplify\CodingStandard\Sniffs\Naming\AbstractClassNameSniff: ~
+    Symplify\CodingStandard\Sniffs\Naming\ClassNameSuffixByParentSniff: ~
+    Symplify\CodingStandard\Sniffs\Naming\InterfaceNameSniff: ~
+    Symplify\CodingStandard\Sniffs\Naming\TraitNameSniff: ~
