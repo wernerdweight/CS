@@ -59,7 +59,6 @@ services:
     Symplify\CodingStandard\Fixer\Commenting\RemoveEmptyDocBlockFixer: ~
     Symplify\CodingStandard\Fixer\Commenting\RemoveSuperfluousDocBlockWhitespaceFixer: ~
     Symplify\CodingStandard\Fixer\LineLength\LineLengthFixer: ~
-    Symplify\CodingStandard\Fixer\Naming\PropertyNameMatchingTypeFixer: ~
     Symplify\CodingStandard\Fixer\Php\ClassStringToClassConstantFixer: ~
     Symplify\CodingStandard\Fixer\Property\ArrayPropertyDefaultValueFixer: ~
     Symplify\CodingStandard\Fixer\Strict\BlankLineAfterStrictTypesFixer: ~
