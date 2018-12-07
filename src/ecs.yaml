@@ -73,7 +73,14 @@ services:
     Symplify\CodingStandard\Sniffs\ControlStructure\SprintfOverContactSniff: ~
     Symplify\CodingStandard\Sniffs\Debug\CommentedOutCodeSniff: ~
     Symplify\CodingStandard\Sniffs\Debug\DebugFunctionCallSniff: ~
-    Symplify\CodingStandard\Sniffs\DependencyInjection\NoClassInstantiationSniff: ~
+    Symplify\CodingStandard\Sniffs\DependencyInjection\NoClassInstantiationSniff:
+        extraAllowedClasses:
+            - 'Doctrine\Common\Collections\ArrayCollection'
+            - 'Gedmo\Tool\Wrapper\EntityWrapper'
+            - 'Symfony\Component\Config\Definition\Builder\TreeBuilder'
+            - 'WernerDweight\RA\RA'
+            - 'WernerDweight\WdCms\*\*\Entity\*'
+            - 'WernerDweight\WdCms\*\*\LazyLoader\*LazyLoader'
     Symplify\CodingStandard\Sniffs\Naming\AbstractClassNameSniff: ~
     Symplify\CodingStandard\Sniffs\Naming\ClassNameSuffixByParentSniff: ~
     Symplify\CodingStandard\Sniffs\Naming\InterfaceNameSniff: ~
