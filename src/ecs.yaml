@@ -79,8 +79,6 @@ services:
             - 'Gedmo\Tool\Wrapper\EntityWrapper'
             - 'Symfony\Component\Config\Definition\Builder\TreeBuilder'
             - 'WernerDweight\RA\RA'
-            - 'WernerDweight\WdCms\*\*\Entity\*'
-            - 'WernerDweight\WdCms\*\*\LazyLoader\*LazyLoader'
     Symplify\CodingStandard\Sniffs\Naming\AbstractClassNameSniff: ~
     Symplify\CodingStandard\Sniffs\Naming\ClassNameSuffixByParentSniff: ~
     Symplify\CodingStandard\Sniffs\Naming\InterfaceNameSniff: ~
