@@ -6,6 +6,11 @@ parameters:
     exclude_checkers:
         - 'PhpCsFixer\Fixer\PhpTag\BlankLineAfterOpeningTagFixer'
         - 'PhpCsFixer\Fixer\LanguageConstruct\DeclareEqualNormalizeFixer'
+    skip:
+        Symplify\CodingStandard\Sniffs\CleanCode\ForbiddenStaticFunctionSniff:
+            - '*/Composer/*Script*.php'
+        Symplify\CodingStandard\Sniffs\DependencyInjection\NoClassInstantiationSniff:
+            - '*/Composer/*Script*.php'
 
 services:
     PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer:
@@ -53,13 +58,11 @@ services:
 
     Symplify\CodingStandard\Sniffs\Commenting\AnnotationTypeExistsSniff: ~
     Symplify\CodingStandard\Fixer\Commenting\ParamReturnAndVarTagMalformsFixer: ~
-    Symplify\CodingStandard\Fixer\Order\PrivateMethodOrderByUseFixer: ~
     Symplify\CodingStandard\Fixer\Order\PropertyOrderByComplexityFixer: ~
     Symplify\CodingStandard\Fixer\ArrayNotation\StandaloneLineInMultilineArrayFixer: ~
     Symplify\CodingStandard\Fixer\Commenting\RemoveEmptyDocBlockFixer: ~
     Symplify\CodingStandard\Fixer\Commenting\RemoveSuperfluousDocBlockWhitespaceFixer: ~
     Symplify\CodingStandard\Fixer\LineLength\LineLengthFixer: ~
-    Symplify\CodingStandard\Fixer\Naming\PropertyNameMatchingTypeFixer: ~
     Symplify\CodingStandard\Fixer\Php\ClassStringToClassConstantFixer: ~
     Symplify\CodingStandard\Fixer\Property\ArrayPropertyDefaultValueFixer: ~
     Symplify\CodingStandard\Fixer\Strict\BlankLineAfterStrictTypesFixer: ~
@@ -75,7 +78,12 @@ services:
     Symplify\CodingStandard\Sniffs\ControlStructure\SprintfOverContactSniff: ~
     Symplify\CodingStandard\Sniffs\Debug\CommentedOutCodeSniff: ~
     Symplify\CodingStandard\Sniffs\Debug\DebugFunctionCallSniff: ~
-    Symplify\CodingStandard\Sniffs\DependencyInjection\NoClassInstantiationSniff: ~
+    Symplify\CodingStandard\Sniffs\DependencyInjection\NoClassInstantiationSniff:
+        extraAllowedClasses:
+            - 'Doctrine\Common\Collections\ArrayCollection'
+            - 'Gedmo\Tool\Wrapper\EntityWrapper'
+            - 'Symfony\Component\Config\Definition\Builder\TreeBuilder'
+            - 'WernerDweight\RA\RA'
     Symplify\CodingStandard\Sniffs\Naming\AbstractClassNameSniff: ~
     Symplify\CodingStandard\Sniffs\Naming\ClassNameSuffixByParentSniff: ~
     Symplify\CodingStandard\Sniffs\Naming\InterfaceNameSniff: ~
