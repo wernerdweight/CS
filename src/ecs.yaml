@@ -6,6 +6,11 @@ parameters:
     exclude_checkers:
         - 'PhpCsFixer\Fixer\PhpTag\BlankLineAfterOpeningTagFixer'
         - 'PhpCsFixer\Fixer\LanguageConstruct\DeclareEqualNormalizeFixer'
+    skip:
+        Symplify\CodingStandard\Sniffs\CleanCode\ForbiddenStaticFunctionSniff:
+            - '*/Composer/*Script*.php'
+        Symplify\CodingStandard\Sniffs\DependencyInjection\NoClassInstantiationSniff:
+            - '*/Composer/*Script*.php'
 
 services:
     PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer:
