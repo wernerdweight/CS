@@ -22,7 +22,7 @@
         "phpmd/phpmd": "^2.6",
         "phpstan/phpstan": "^0.10.5",
         "phpunit/phpunit": "^7.4",
-        "nella/victor": "^1.2"
+        "wernerdweight/victor": "^2"
     },
     "require-dev": {},
     "suggest": {},
