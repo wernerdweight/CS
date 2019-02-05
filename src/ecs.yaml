@@ -22,7 +22,7 @@ services:
     PhpCsFixer\Fixer\Operator\IncrementStyleFixer:
         style: post
     PhpCsFixer\Fixer\Phpdoc\PhpdocAlignFixer: ~
-    PhpCsFixer\Fixer\ClassNotation\VisibilityRequiredFixer: ['property', 'method', 'const']
+    PhpCsFixer\Fixer\ClassNotation\VisibilityRequiredFixer: ~
     PhpCsFixer\Fixer\ControlStructure\YodaStyleFixer: ~
     PhpCsFixer\Fixer\CastNotation\CastSpacesFixer:
         space: none
@@ -62,7 +62,8 @@ services:
     Symplify\CodingStandard\Fixer\ArrayNotation\StandaloneLineInMultilineArrayFixer: ~
     Symplify\CodingStandard\Fixer\Commenting\RemoveEmptyDocBlockFixer: ~
     Symplify\CodingStandard\Fixer\Commenting\RemoveSuperfluousDocBlockWhitespaceFixer: ~
-    Symplify\CodingStandard\Fixer\LineLength\LineLengthFixer: ~
+    Symplify\CodingStandard\Fixer\LineLength\LineLengthFixer:
+        inlineShortLines: false
     Symplify\CodingStandard\Fixer\Php\ClassStringToClassConstantFixer: ~
     Symplify\CodingStandard\Fixer\Property\ArrayPropertyDefaultValueFixer: ~
     Symplify\CodingStandard\Fixer\Strict\BlankLineAfterStrictTypesFixer: ~
