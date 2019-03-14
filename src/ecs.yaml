@@ -3,10 +3,9 @@ imports:
     - { resource: '%vendor_dir%/symplify/easy-coding-standard/config/symfony.yml' }
 
 parameters:
-    exclude_checkers:
-        - 'PhpCsFixer\Fixer\PhpTag\BlankLineAfterOpeningTagFixer'
-        - 'PhpCsFixer\Fixer\LanguageConstruct\DeclareEqualNormalizeFixer'
     skip:
+        PhpCsFixer\Fixer\PhpTag\BlankLineAfterOpeningTagFixer: ~
+        PhpCsFixer\Fixer\LanguageConstruct\DeclareEqualNormalizeFixer: ~
         Symplify\CodingStandard\Sniffs\CleanCode\ForbiddenStaticFunctionSniff:
             - '*/Composer/*Script*.php'
         Symplify\CodingStandard\Sniffs\DependencyInjection\NoClassInstantiationSniff:
@@ -52,7 +51,7 @@ services:
     SlevomatCodingStandard\Sniffs\TypeHints\NullableTypeForNullDefaultValueSniff: ~
     SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSpacingSniff: ~
     SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSpacingSniff: ~
-    SlevomatCodingStandard\Sniffs\Types\EmptyLinesAroundTypeBracesSniff:
+    SlevomatCodingStandard\Sniffs\Classes\EmptyLinesAroundClassBracesSniff:
         linesCountAfterOpeningBrace: 0
         linesCountBeforeClosingBrace: 0
 
