@@ -15,12 +15,12 @@
         }
     ],
     "require": {
-        "php": ">=7.1.0",
-        "symplify/easy-coding-standard": "^5.4.16",
-        "symplify/coding-standard": "^5.4.16",
+        "php": ">=7.2.0",
+        "symplify/easy-coding-standard": "^6.0",
+        "symplify/coding-standard": "^6.0",
         "phpmd/phpmd": "^2.6",
-        "phpstan/phpstan": "^0.10.5",
-        "phpunit/phpunit": "^7.4",
+        "phpstan/phpstan": "^0.11",
+        "phpunit/phpunit": "^8.2",
         "wernerdweight/victor": "^2"
     },
     "require-dev": {},
