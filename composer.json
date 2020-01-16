@@ -26,8 +26,8 @@
     "require-dev": {},
     "suggest": {},
     "autoload": {
-        "psr-0": {
-            "WernerDweight\\CS\\": ""
+        "psr-4": {
+            "WernerDweight\\CS\\": "src"
         }
     },
     "autoload-dev": {
