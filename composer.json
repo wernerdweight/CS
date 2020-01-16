@@ -16,11 +16,11 @@
     ],
     "require": {
         "php": ">=7.2.0",
-        "symplify/easy-coding-standard": "^6.0",
-        "symplify/coding-standard": "^6.0",
-        "phpmd/phpmd": "^2.6",
-        "phpstan/phpstan": "^0.11",
-        "phpunit/phpunit": "^8.2",
+        "symplify/easy-coding-standard": "^7.0",
+        "symplify/coding-standard": "^7.0",
+        "phpmd/phpmd": "^2.8",
+        "phpstan/phpstan": "^0.12",
+        "phpunit/phpunit": "^8.5",
         "wernerdweight/victor": "^2"
     },
     "require-dev": {},
