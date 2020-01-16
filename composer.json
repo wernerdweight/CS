@@ -32,12 +32,11 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "WernerDweight\\CS\\Tests\\": "tests"
         },
         "files": [
             "./vendor/squizlabs/php_codesniffer/autoload.php",
             "./vendor/squizlabs/php_codesniffer/src/Util/Tokens.php"
         ]
-    },
-    "target-dir": "WernerDweight/CS"
+    }
 }
