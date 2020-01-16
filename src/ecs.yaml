@@ -8,7 +8,7 @@ parameters:
         PhpCsFixer\Fixer\LanguageConstruct\DeclareEqualNormalizeFixer: ~
         Symplify\CodingStandard\Sniffs\CleanCode\ForbiddenStaticFunctionSniff:
             - '*/Composer/*Script*.php'
-        Symplify\CodingStandard\Sniffs\DependencyInjection\NoClassInstantiationSniff:
+        WernerDweight\CS\Sniffs\DependencyInjection\NoClassInstantiationSniff:
             - '*/Composer/*Script*.php'
 
 services:
@@ -78,7 +78,7 @@ services:
     Symplify\CodingStandard\Sniffs\ControlStructure\SprintfOverContactSniff: ~
     Symplify\CodingStandard\Sniffs\Debug\CommentedOutCodeSniff: ~
     Symplify\CodingStandard\Sniffs\Debug\DebugFunctionCallSniff: ~
-    Symplify\CodingStandard\Sniffs\DependencyInjection\NoClassInstantiationSniff:
+    WernerDweight\CS\Sniffs\DependencyInjection\NoClassInstantiationSniff:
         extraAllowedClasses:
             - 'Doctrine\Common\Collections\ArrayCollection'
             - 'Gedmo\Tool\Wrapper\EntityWrapper'
