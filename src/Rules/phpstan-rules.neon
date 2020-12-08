@@ -1,7 +1,11 @@
-rules:
-  - Symplify\CodingStandard\Rules\ForbiddenParentClassRule
-
-parameters:
-  symplify:
-    forbidden_parent_classes:
-      - 'Doctrine\ORM\EntityRepository'
+services:
+  - Symplify\PackageBuilder\Matcher\ArrayStringAndFnMatcher
+  -
+    class: Symplify\CodingStandard\Rules\ForbiddenParentClassRule
+    tags:
+      - phpstan.rules.rule
+    arguments:
+      forbiddenParentClasses:
+        - Doctrine\ORM\EntityRepository
+      forbiddenParentClassesWithPreferences:
+        PHPStan\Testing\RuleTestCase: 'Symplify\PHPStanExtensions\Testing\AbstractServiceAwareRuleTestCase'
