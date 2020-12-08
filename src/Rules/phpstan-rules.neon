@@ -1,0 +1,7 @@
+rules:
+  - Symplify\CodingStandard\Rules\ForbiddenParentClassRule
+
+parameters:
+  symplify:
+    forbidden_parent_classes:
+      - 'Doctrine\ORM\EntityRepository'

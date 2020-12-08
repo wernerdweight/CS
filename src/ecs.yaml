@@ -8,8 +8,8 @@ parameters:
         PhpCsFixer\Fixer\LanguageConstruct\DeclareEqualNormalizeFixer: ~
         Symplify\CodingStandard\Sniffs\CleanCode\ForbiddenStaticFunctionSniff:
             - '*/Composer/*Script*.php'
-        WernerDweight\CS\Sniffs\DependencyInjection\NoClassInstantiationSniff:
-            - '*/Composer/*Script*.php'
+        #WernerDweight\CS\Sniffs\DependencyInjection\NoClassInstantiationSniff:
+        #    - '*/Composer/*Script*.php'
 
 services:
     PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer:
@@ -68,9 +68,6 @@ services:
     Symplify\CodingStandard\Fixer\Strict\BlankLineAfterStrictTypesFixer: ~
     Symplify\CodingStandard\Fixer\Solid\FinalInterfaceFixer: ~
     Symplify\CodingStandard\Sniffs\Architecture\ExplicitExceptionSniff: ~
-    Symplify\CodingStandard\Sniffs\CleanCode\ForbiddenParentClassSniff:
-        forbiddenParentClasses:
-            - 'Doctrine\ORM\EntityRepository'
     Symplify\CodingStandard\Sniffs\CleanCode\ForbiddenReferenceSniff: ~
     Symplify\CodingStandard\Sniffs\CleanCode\ForbiddenStaticFunctionSniff: ~
     Symplify\CodingStandard\Sniffs\Commenting\VarConstantCommentSniff: ~
@@ -78,12 +75,12 @@ services:
     Symplify\CodingStandard\Sniffs\ControlStructure\SprintfOverContactSniff: ~
     Symplify\CodingStandard\Sniffs\Debug\CommentedOutCodeSniff: ~
     Symplify\CodingStandard\Sniffs\Debug\DebugFunctionCallSniff: ~
-    WernerDweight\CS\Sniffs\DependencyInjection\NoClassInstantiationSniff:
-        extraAllowedClasses:
-            - 'Doctrine\Common\Collections\ArrayCollection'
-            - 'Gedmo\Tool\Wrapper\EntityWrapper'
-            - 'Symfony\Component\Config\Definition\Builder\TreeBuilder'
-            - 'WernerDweight\RA\RA'
+    #WernerDweight\CS\Sniffs\DependencyInjection\NoClassInstantiationSniff:
+    #    extraAllowedClasses:
+    #        - 'Doctrine\Common\Collections\ArrayCollection'
+    #        - 'Gedmo\Tool\Wrapper\EntityWrapper'
+    #        - 'Symfony\Component\Config\Definition\Builder\TreeBuilder'
+    #        - 'WernerDweight\RA\RA'
     Symplify\CodingStandard\Sniffs\Naming\AbstractClassNameSniff: ~
     Symplify\CodingStandard\Sniffs\Naming\ClassNameSuffixByParentSniff: ~
     Symplify\CodingStandard\Sniffs\Naming\InterfaceNameSniff: ~
