@@ -1,9 +1,28 @@
+includes:
+  - ../../../../symplify/phpstan-rules/config/static-rules.neon
+  - ../../../../symplify/phpstan-rules/config/services/services.neon
+
+  - ../../../../symplify/phpstan-rules/config/array-rules.neon
+  - ../../../../symplify/phpstan-rules/config/code-complexity-rules.neon
+  - ../../../../symplify/phpstan-rules/config/doctrine-rules.neon
+  - ../../../../symplify/phpstan-rules/config/naming-rules.neon
+  - ../../../../symplify/phpstan-rules/config/regex-rules.neon
+  - ../../../../symplify/phpstan-rules/config/services-rules.neon
+  - ../../../../symplify/phpstan-rules/config/size-rules.neon
+  - ../../../../symplify/phpstan-rules/config/forbidden-static-rules.neon
+  - ../../../../symplify/phpstan-rules/config/string-to-constant-rules.neon
+  - ../../../../symplify/phpstan-rules/config/symfony-rules.neon
+  - ../../../../symplify/phpstan-rules/config/test-rules.neon
+  - ../../../../symplify/phpstan-rules/config/generic-rules.neon
+  - ../../../../symplify/phpstan-rules/config/symplify-strict-rules.neon
+
+  - ../../../../symplify/phpstan-rules/config/configurable-rules.neon
+
+
 services:
-  - Symplify\PackageBuilder\Matcher\ArrayStringAndFnMatcher
   -
-    class: Symplify\CodingStandard\Rules\ForbiddenParentClassRule
-    tags:
-      - phpstan.rules.rule
+    class: Symplify\PHPStanRules\Rules\ForbiddenParentClassRule
+    tags: [ phpstan.rules.rule ]
     arguments:
       forbiddenParentClasses:
         - Doctrine\ORM\EntityRepository
