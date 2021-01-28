@@ -16,8 +16,9 @@
     ],
     "require": {
         "php": ">=7.2.0",
-        "symplify/easy-coding-standard": "^8.0",
-        "symplify/coding-standard": "^8.0",
+        "symplify/easy-coding-standard": "^9.0",
+        "symplify/coding-standard": "^9.0",
+        "symplify/config-transformer": "^9.0",
         "phpmd/phpmd": "^2.9",
         "phpstan/phpstan": "^0.12",
         "phpunit/phpunit": "^9.0"
