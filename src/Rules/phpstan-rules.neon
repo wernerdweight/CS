@@ -57,3 +57,6 @@ parameters:
     -
       message: '#Property with protected modifier is not allowed. Use interface contract method instead#'
       path: ../../../../../src/Exception/*
+    -
+      message: '#Function "method_exists()" cannot be used/left in the code#'
+      path: ../../../../../tests/bootstrap.php
