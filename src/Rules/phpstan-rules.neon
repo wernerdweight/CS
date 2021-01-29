@@ -28,3 +28,32 @@ services:
         - Doctrine\ORM\EntityRepository
       forbiddenParentClassesWithPreferences:
         PHPStan\Testing\RuleTestCase: 'Symplify\PHPStanExtensions\Testing\AbstractServiceAwareRuleTestCase'
+
+parameters:
+  ignoreErrors:
+    -
+      message: '#Do not use trait#'
+      path: ../../../../../src/Entity/Traits/*
+    -
+      message: '#Do not use @method tag in class docblock#'
+      path: ../../../../../src/Repository/*
+    -
+      message: '#Trait method "[^"]+" should not contain any logic, but only delegate to other class call#'
+      path: ../../../../../src/Entity/Traits/*
+    -
+      message: '#Instead of "DateTime" class/interface use "[^"]+"#'
+      path: ../../../../../src/Entity/*
+    -
+      message: '#Property with protected modifier is not allowed. Use interface contract method instead#'
+      paths:
+        - ../../../../../src/Command/*
+        - ../../../../../src/Entity/*
+    -
+      message: '#Do not use static property#'
+      path: ../../../../../src/Command/*
+    -
+      message: '#Use explicit names over dynamic ones#'
+      path: ../../../../../src/Kernel.php
+    -
+      message: '#Property with protected modifier is not allowed. Use interface contract method instead#'
+      path: ../../../../../src/Exception/*
