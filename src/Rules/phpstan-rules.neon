@@ -19,17 +19,8 @@ includes:
   - ../../../../symplify/phpstan-rules/config/configurable-rules.neon
 
 
-services:
-  -
-    class: Symplify\PHPStanRules\Rules\ForbiddenParentClassRule
-    tags: [ phpstan.rules.rule ]
-    arguments:
-      forbiddenParentClasses:
-        - Doctrine\ORM\EntityRepository
-      forbiddenParentClassesWithPreferences:
-        PHPStan\Testing\RuleTestCase: 'Symplify\PHPStanExtensions\Testing\AbstractServiceAwareRuleTestCase'
-
 parameters:
+  reportUnmatchedIgnoredErrors: false
   ignoreErrors:
     -
       message: '#Do not use trait#'
@@ -60,3 +51,9 @@ parameters:
     -
       message: '#Function "method_exists\(\)" cannot be used/left in the code#'
       path: ../../../../../tests/bootstrap.php
+    -
+      message: '#Use required typed property over of nullable property#'
+      path: ../../../../../src/Entity/*
+    -
+      message: '#Parameter "[^"]+" cannot be nullable#'
+      path: ../../../../../src/Entity/*
