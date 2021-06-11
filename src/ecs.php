@@ -10,6 +10,7 @@ use PhpCsFixer\Fixer\LanguageConstruct\DeclareEqualNormalizeFixer;
 use PhpCsFixer\Fixer\Operator\ConcatSpaceFixer;
 use PhpCsFixer\Fixer\Operator\IncrementStyleFixer;
 use PhpCsFixer\Fixer\PhpTag\BlankLineAfterOpeningTagFixer;
+use PhpCsFixer\Fixer\Phpdoc\GeneralPhpdocAnnotationRemoveFixer;
 use PhpCsFixer\Fixer\Phpdoc\PhpdocAlignFixer;
 use PhpCsFixer\Fixer\Whitespace\BlankLineBeforeStatementFixer;
 use SlevomatCodingStandard\Sniffs\Arrays\TrailingArrayCommaSniff;
@@ -31,7 +32,6 @@ use SlevomatCodingStandard\Sniffs\TypeHints\NullableTypeForNullDefaultValueSniff
 use SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSpacingSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSpacingSniff;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use function Symfony\Component\DependencyInjection\Loader\Configurator\ref;
 use Symplify\CodingStandard\Fixer\ArrayNotation\StandaloneLineInMultilineArrayFixer;
 use Symplify\CodingStandard\Fixer\Commenting\ParamReturnAndVarTagMalformsFixer;
 use Symplify\CodingStandard\Fixer\Commenting\RemoveEmptyDocBlockFixer;
@@ -96,8 +96,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     $services->set(InlineDocCommentDeclarationSniff::class);
 
-    $services->set('SlevomatCodingStandard\Sniffs\Commenting\ForbiddenAnnotationsSniff')
-        ->property('forbiddenAnnotations', [ref('author'), ref('created'), ref('version'), ref('package'), ref('copyright'), ref('license')]);
+    $services->set(GeneralPhpdocAnnotationRemoveFixer::class)
+        ->call('configure', [['annotations' => ['author', 'created', 'version', 'package', 'copyright', 'license']]]);
 
     $services->set(AssignmentInConditionSniff::class);
 
