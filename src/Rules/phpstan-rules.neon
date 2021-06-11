@@ -13,7 +13,6 @@ includes:
   - ../../../../symplify/phpstan-rules/config/string-to-constant-rules.neon
   - ../../../../symplify/phpstan-rules/config/symfony-rules.neon
   - ../../../../symplify/phpstan-rules/config/test-rules.neon
-  - ../../../../symplify/phpstan-rules/config/generic-rules.neon
   - ../../../../symplify/phpstan-rules/config/symplify-strict-rules.neon
 
   - ../../../../symplify/phpstan-rules/config/configurable-rules.neon
