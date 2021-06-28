@@ -144,7 +144,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     $services->set(PropertyOrderByComplexityFixer::class);
 
-    $services->set(StandaloneLineInMultilineArrayFixer::class);
+    // FIXME: this rule is broken in PHP-CS-Fixer
+    //$services->set(StandaloneLineInMultilineArrayFixer::class);
 
     $services->set(RemoveEmptyDocBlockFixer::class);
 
