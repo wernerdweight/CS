@@ -2,17 +2,17 @@ includes:
   - ../../../../symplify/phpstan-rules/config/static-rules.neon
   - ../../../../symplify/phpstan-rules/config/services/services.neon
 
-  - ../../../../symplify/phpstan-rules/config/array-rules.neon
-  - ../../../../symplify/phpstan-rules/config/code-complexity-rules.neon
-  - ../../../../symplify/phpstan-rules/config/doctrine-rules.neon
-  - ../../../../symplify/phpstan-rules/config/naming-rules.neon
-  - ../../../../symplify/phpstan-rules/config/regex-rules.neon
-  - ../../../../symplify/phpstan-rules/config/services-rules.neon
-  - ../../../../symplify/phpstan-rules/config/size-rules.neon
-  - ../../../../symplify/phpstan-rules/config/forbidden-static-rules.neon
-  - ../../../../symplify/phpstan-rules/config/string-to-constant-rules.neon
-  - ../../../../symplify/phpstan-rules/config/symfony-rules.neon
-  - ../../../../symplify/phpstan-rules/config/test-rules.neon
+  - ../../../../symplify/phpstan-rules/config/symplify-rules/array-rules.neon
+  - ../../../../symplify/phpstan-rules/config/symplify-rules/code-complexity-rules.neon
+  - ../../../../symplify/phpstan-rules/config/symplify-rules/doctrine-rules.neon
+  - ../../../../symplify/phpstan-rules/config/symplify-rules/naming-rules.neon
+  - ../../../../symplify/phpstan-rules/config/symplify-rules/regex-rules.neon
+  - ../../../../symplify/phpstan-rules/config/symplify-rules/services-rules.neon
+  - ../../../../symplify/phpstan-rules/config/symplify-rules/size-rules.neon
+  - ../../../../symplify/phpstan-rules/config/symplify-rules/static-rules.neon
+  - ../../../../symplify/phpstan-rules/config/symplify-rules/string-to-constant-rules.neon
+  - ../../../../symplify/phpstan-rules/config/symplify-rules/symfony-rules.neon
+  - ../../../../symplify/phpstan-rules/config/symplify-rules/test-rules.neon
   - ../../../../symplify/phpstan-rules/config/symplify-strict-rules.neon
 
   - ../../../../symplify/phpstan-rules/config/configurable-rules.neon
