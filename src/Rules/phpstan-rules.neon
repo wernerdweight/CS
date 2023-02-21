@@ -4,17 +4,17 @@ includes:
 
   - ../../../../symplify/phpstan-rules/config/array-rules.neon
   - ../../../../symplify/phpstan-rules/config/code-complexity-rules.neon
-  - ../../../../symplify/phpstan-rules/config/doctrine-rules.neon
+  - ../../../../symplify/phpstan-rules/config/collector-rules.neon
+  - ../../../../symplify/phpstan-rules/config/forbidden-static-rules.neon
   - ../../../../symplify/phpstan-rules/config/naming-rules.neon
   - ../../../../symplify/phpstan-rules/config/regex-rules.neon
-  - ../../../../symplify/phpstan-rules/config/services-rules.neon
-  - ../../../../symplify/phpstan-rules/config/size-rules.neon
-  - ../../../../symplify/phpstan-rules/config/string-to-constant-rules.neon
-  - ../../../../symplify/phpstan-rules/config/symfony-rules.neon
   - ../../../../symplify/phpstan-rules/config/test-rules.neon
-  - ../../../../symplify/phpstan-rules/config/symplify-strict-rules.neon
 
   - ../../../../symplify/phpstan-rules/config/configurable-rules.neon
+
+  - ../../../../symplify/phpstan-rules/config/packages/symfony/symfony-rules.neon
+  - ../../../../symplify/phpstan-rules/config/packages/symfony/services.neon
+  - ../../../../symplify/phpstan-rules/config/packages/object-calisthenics-rules/object-calisthenics-rules.neon
 
 
 parameters:
@@ -55,3 +55,18 @@ parameters:
     -
       message: '#Parameter "[^"]+" cannot be nullable#'
       path: ../../../../../src/Entity/*
+    -
+      message: '#Do not name "[^"]+", shorter than \d+ chars#'
+      path: '../../../../../tests/*'
+    -
+      message: '#Decouple method call in assert to standalone line to make test core more readable#'
+      path: '../../../../../tests/*'
+    -
+      message: '#Separate function "[^"]+" in method call to standalone row to improve readability#'
+      path: '../../../../../tests/*'
+    -
+      message: '#Method call return value that should be used, but is not#'
+      path: '../../../../../tests/*'
+    -
+      message: '#Do not use chained method calls. Put each on separated lines#'
+      path: '../../../../../tests/*'
