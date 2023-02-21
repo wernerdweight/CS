@@ -31,7 +31,6 @@ use SlevomatCodingStandard\Sniffs\TypeHints\LongTypeHintsSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\NullableTypeForNullDefaultValueSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSpacingSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSpacingSniff;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symplify\CodingStandard\Fixer\ArrayNotation\StandaloneLineInMultilineArrayFixer;
 use Symplify\CodingStandard\Fixer\Commenting\ParamReturnAndVarTagMalformsFixer;
 use Symplify\CodingStandard\Fixer\Commenting\RemoveEmptyDocBlockFixer;
@@ -55,17 +54,31 @@ use Symplify\CodingStandard\Sniffs\Naming\AbstractClassNameSniff;
 use Symplify\CodingStandard\Sniffs\Naming\ClassNameSuffixByParentSniff;
 use Symplify\CodingStandard\Sniffs\Naming\InterfaceNameSniff;
 use Symplify\CodingStandard\Sniffs\Naming\TraitNameSniff;
+use Symplify\EasyCodingStandard\Config\ECSConfig;
+use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 
-return static function (ContainerConfigurator $containerConfigurator): void {
-    $containerConfigurator->import(__DIR__ . '/../../../symplify/easy-coding-standard/config/set/psr12.php');
+return function (ECSConfig $ecsConfig): void {
+    $ecsConfig->sets([
+        SetList::PSR_12,
+        SetList::CLEAN_CODE,
+        SetList::COMMON,
+        SetList::PHPUNIT,
+        SetList::STRICT,
+        SetList::ARRAY,
+        SetList::COMMENTS,
+        SetList::CONTROL_STRUCTURES,
+        SetList::DOCBLOCK,
+        SetList::NAMESPACES,
+        SetList::DOCTRINE_ANNOTATIONS,
+        SetList::SPACES,
+        SetList::SYMPLIFY,
+    ]);
 
-    $containerConfigurator->import(__DIR__ . '/../../../symplify/easy-coding-standard/config/set/symfony.php');
-
-    $parameters = $containerConfigurator->parameters();
+    $parameters = $ecsConfig->parameters();
 
     $parameters->set('skip', [BlankLineAfterOpeningTagFixer::class => null, DeclareEqualNormalizeFixer::class => null, 'Symplify\CodingStandard\Sniffs\CleanCode\ForbiddenStaticFunctionSniff' => ['*/Composer/*Script*.php']]);
 
-    $services = $containerConfigurator->services();
+    $services = $ecsConfig->services();
 
     $services->set(ArraySyntaxFixer::class)
         ->call('configure', [['syntax' => 'short']]);
@@ -144,8 +157,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     $services->set(PropertyOrderByComplexityFixer::class);
 
-    // FIXME: this rule is broken in PHP-CS-Fixer
-    //$services->set(StandaloneLineInMultilineArrayFixer::class);
+    $services->set(StandaloneLineInMultilineArrayFixer::class);
 
     $services->set(RemoveEmptyDocBlockFixer::class);
 
@@ -185,4 +197,5 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(InterfaceNameSniff::class);
 
     $services->set(TraitNameSniff::class);
+
 };
